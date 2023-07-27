@@ -1,4 +1,4 @@
-# store
+# store-app-with-react-native-and-api
  mobile-store application
 with react-native 
 and local data 
