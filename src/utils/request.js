@@ -1,8 +1,8 @@
 import axios from "axios";
 export const request = (url,method,data) => {
     return axios({
-      method:method || 'get',
-      url: `http://listicle.deegeehub.com/api${url}`,
-      data,
+      method:method || 'post',
+      url: `https://d27e-41-141-233-66.ngrok-free.app/api/users/register`,
+      data:data,
     });
 }

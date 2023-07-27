@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Pressable, Text, TextInput, View, Image, Modal, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
 import { styles } from './style';
 
-const Input = ({ label, type, options, isPassword, value, onChangeText, placeholder, style, ...props }) => {
+const Input = ({ label, type, options, isPassword, value, onChangeText,defaultValue, placeholder, style, ...props }) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isPickerModalVisible, setPickerModalVisible] = useState(false);
 
@@ -30,7 +30,7 @@ const Input = ({ label, type, options, isPassword, value, onChangeText, placehol
                 </Pressable>
             ) : (
                 <View style={styles.inputContainer}>
-                    <TextInput placeholder={placeholder} value={value} onChangeText={onChangeText} secureTextEntry={isPassword && !isPasswordVisible} style={[styles.input, style]} {...props} />
+                    <TextInput placeholder={placeholder} value={value} defaultValue={defaultValue} onChangeText={onChangeText} secureTextEntry={isPassword && !isPasswordVisible} style={[styles.input, style]} {...props} />
 
                     {isPassword ? (
                         <Pressable onPress={onEyePress}>

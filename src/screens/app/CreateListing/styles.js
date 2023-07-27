@@ -5,6 +5,10 @@ export const styles = StyleSheet.create({
     container: {
         padding: 24,
     },
+    testimg:{
+     color:colors.blue,
+
+    },
     sectionTitle: {
         fontWeight: '500',
         fontSize: 14,

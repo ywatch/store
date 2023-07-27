@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Pressable, Text, Touchable, TouchableOpacity } from "react-native";
+import { Image, TouchableOpacity } from "react-native";
 import { styles } from "./style";
 import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 

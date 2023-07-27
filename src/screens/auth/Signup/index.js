@@ -9,6 +9,7 @@ import Separetor from "../../../components/separetor";
 import GoogleLogin from "../../../components/GoogleLogin";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { request } from "../../../utils/request";
+import axios from "axios";
 const Signup = ({navigation}) => {
     const[checked,setChecked]=useState(false);
     const[values,setValue]=useState({})
@@ -31,11 +32,12 @@ const Signup = ({navigation}) => {
                 Alert.alert('password false')
                 return;
                 }
-                request({
-                    url:'/user/register',
+                console.log(values)
+                return axios({
                     method:'post',
+                    url: `https://fd85-41-250-193-171.ngrok-free.app/api/User`,
                     data:values,
-                }).then( response => {
+                  }).then( response => {
 console.log('response >>',response)
                 }).catch(error => {
                     console.log(error)

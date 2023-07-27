@@ -98,7 +98,6 @@ const Tabs = () =>{
 }
 const WEB_CLIENT_ID = '71500186007-m0u9jdgfa73bqaot1uokot2af3io3irt.apps.googleusercontent.com'
 function App(): JSX.Element {
-  const inSigned = true;
   useEffect(() => {
     GoogleSignin.configure({
       scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
@@ -109,21 +108,15 @@ function App(): JSX.Element {
   },[])
   return (
     <SafeAreaProvider>
-     <NavigationContainer>
-      <Stack.Navigator>
-        {inSigned ?(       
-          <>   
-           <Stack.Screen name="Tabs" component={Tabs} options={{headerShown: false}} />
-           <Stack.Screen name="ProductDetails" component={ProductDetails} options={{headerShown: false}} />
-</> 
-):(    
-  <>
-            <Stack.Screen name="Splash" component={Splash} options={{headerShown: false}} />
-            <Stack.Screen name="Signin" component={Signin} options={{headerShown: false}} />
-            <Stack.Screen name="Signup" component={Signup} options={{headerShown: false}} />
-      </>)}
-      </Stack.Navigator>  
-      </NavigationContainer>
+          <NavigationContainer>
+            <Stack.Navigator>
+                  <Stack.Screen name="Splash" component={Splash} options={{headerShown: false}} />
+                  <Stack.Screen name="Signin" component={Signin} options={{headerShown: false}} />
+                  <Stack.Screen name="Signup" component={Signup} options={{headerShown: false}} />
+                  <Stack.Screen name="Tabs" component={Tabs} options={{headerShown: false}} />
+                  <Stack.Screen name="ProductDetails" component={ProductDetails} options={{headerShown: false}} />
+</Stack.Navigator>  
+            </NavigationContainer>
       </SafeAreaProvider>
   );
 }
